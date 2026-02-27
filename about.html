@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PRIMARY SEO CONFIGURED -->
+    <title>About BrandByUV — Our Story, Process & Vision</title>
+    <meta name="title" content="About BrandByUV — Our Story, Process & Vision">
+    <meta name="description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta name="author" content="Ihsan MK — BrandByUV">
+    <meta name="keywords" content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
+    <link rel="canonical" href="https://brandbyuv.com/about.html">
+
+    <!-- OPEN GRAPH / FACEBOOK -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brandbyuv.com/about.html">
+    <meta property="og:title" content="About BrandByUV — Our Story, Process & Vision">
+    <meta property="og:description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta property="og:image" content="https://brandbyuv.com/images/og-image.jpg">
+
+    <!-- TWITTER / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brandbyuv.com/about.html">
+    <meta property="twitter:title" content="About BrandByUV — Our Story, Process & Vision">
+    <meta property="twitter:description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta property="twitter:image" content="https://brandbyuv.com/images/og-image.jpg">
+            <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        /* ================================================================
+           ABOUT PAGE — Matches Home Page Design System
+           ================================================================ */
+
+        /* ---------- DARK BANNER (not full hero) ---------- */
+        .hero-dark {
+            padding: 160px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .hero-dark h1 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero-dark h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #ff4d8d, #cf004d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-dark .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255, 223, 236, 0.7);
+            max-width: 560px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+
+        .hero-dark .hero-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-dark .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 223, 236, 0.6);
+            margin-bottom: 14px;
+        }
+
+        /* ---------- SECTION COMMON (light) ---------- */
+        .ls {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .ls-alt {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .ls-dark {
+            padding: 80px 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.12) 0%, transparent 55%), #0a0a0f;
+            color: rgba(255, 223, 236, 0.7);
+        }
+
+        .ls-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ls-header .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .ls-dark .ls-header .ey {
+            color: rgba(255, 223, 236, 0.5);
+        }
+
+        .ls-header h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .ls-dark .ls-header h2 {
+            color: #fff;
+        }
+
+        .ls-header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .ls-dark .ls-header p {
+            color: rgba(255, 223, 236, 0.6);
+        }
+
+        /* ---------- WHO WE ARE — Text Block ---------- */
+        .about-text {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        .about-text strong {
+            color: var(--dark);
+        }
+
+        /* ---------- MISSION & VISION CARDS ---------- */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mv-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            transition: var(--transition);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .mv-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+
+        .mv-label svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .mv-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .mv-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .mv-card strong {
+            color: var(--dark);
+        }
+
+        /* ---------- PROCESS STEPS ---------- */
+        .proc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .proc-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 28px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .proc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .proc-num {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 8px;
+        }
+
+        .proc-card h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .proc-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ---------- DIFFERENTIATORS ---------- */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .diff-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 20px;
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .diff-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(207, 0, 77, 0.18);
+        }
+
+        .diff-check {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .diff-item p {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* ---------- IMPACT STATS ---------- */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: linear-gradient(145deg, rgba(207, 0, 77, 0.08), rgba(147, 0, 60, 0.12));
+            border: 1px solid rgba(207, 0, 77, 0.15);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ---------- IMPACT BULLETS ---------- */
+        .impact-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .impact-list li:hover {
+            transform: translateX(4px);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .impact-list li span {
+            color: #fff;
+            background: var(--gradient-accent);
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.7rem;
+        }
+
+        /* ---------- PHILOSOPHY CARD ---------- */
+        .philo-card {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 48px 40px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, #6e0833 0%, #a30043 50%, #7a0035 100%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .philo-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 22px;
+        }
+
+        .philo-card p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .philo-card .highlight {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        /* ---------- CTA FINAL ---------- */
+        .cta-final {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .cta-final h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: #feecf3;
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 223, 236, 0.7);
+            font-size: 1rem;
+            max-width: 540px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-final .cb {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer links row — transparent on desktop */
+        .footer-links-row {
+            display: contents;
+        }
+
+        /* ========== RESPONSIVE: TABLET (≤1024px) ========== */
+        @media (max-width: 1024px) {
+            .hero-dark {
+                padding: 130px 0 50px;
+            }
+
+            .mv-grid {
+                gap: 20px;
+            }
+
+            .proc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .diff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ========== RESPONSIVE: MOBILE (≤768px) ========== */
+        @media (max-width: 768px) {
+            .hero-dark {
+                padding: 100px 0 40px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.88rem;
+            }
+
+            .hero-dark .hero-btns .btn {
+                padding: 10px 20px;
+                font-size: 0.78rem;
+            }
+
+            /* Sections — generous breathing room */
+            .ls,
+            .ls-alt,
+            .ls-dark {
+                padding: 80px 0;
+            }
+
+            .ls-header {
+                margin-bottom: 28px;
+            }
+
+            .ls-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .ls-header p {
+                font-size: 0.82rem;
+            }
+
+            .about-text p {
+                font-size: 0.88rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .mv-card {
+                padding: 24px 20px;
+            }
+
+            .mv-card h3 {
+                font-size: 1.05rem;
+            }
+
+            .mv-card p {
+                font-size: 0.82rem;
+            }
+
+            .proc-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .proc-card {
+                padding: 20px 14px;
+            }
+
+            .proc-num {
+                font-size: 1.2rem;
+            }
+
+            .proc-card h4 {
+                font-size: 0.78rem;
+            }
+
+            .proc-card p {
+                font-size: 0.7rem;
+            }
+
+            .diff-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .diff-item {
+                padding: 14px 16px;
+            }
+
+            .diff-item p {
+                font-size: 0.82rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 22px 14px;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.72rem;
+            }
+
+            .impact-list li {
+                font-size: 0.85rem;
+                padding: 10px 14px;
+                margin-bottom: 6px;
+            }
+
+            .philo-card {
+                padding: 32px 22px;
+            }
+
+            .philo-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .philo-card p {
+                font-size: 0.85rem;
+            }
+
+            .cta-final {
+                padding: 80px 0;
+            }
+
+            .cta-final h2 {
+                font-size: 1.4rem;
+            }
+
+            .cta-final p {
+                font-size: 0.85rem;
+            }
+
+            .cta-final .cb {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .cta-final .cb .btn {
+                padding: 10px 18px;
+                font-size: 0.75rem;
+            }
+
+            /* Footer — Quick Links & Services in one row */
+            .footer-links-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            /* Get in Touch — stylish card on mobile */
+            .footer-col.footer-touch {
+                padding: 24px 20px;
+                background: linear-gradient(135deg, rgba(207, 0, 77, 0.08), rgba(147, 0, 60, 0.12));
+                border-radius: var(--radius-lg);
+                border: 1px solid rgba(207, 0, 77, 0.15);
+                margin-top: 12px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col.footer-touch h4 {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .footer-col.footer-touch a {
+                padding: 7px 0;
+                font-size: 0.88rem;
+                color: rgba(255, 223, 236, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .footer-col.footer-touch a:hover {
+                color: #fff;
+            }
+
+            /* Footer brand center on mobile */
+            .footer-brand {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-brand .footer-social {
+                justify-content: center;
+            }
+
+            /* Footer bottom */
+            .footer-bottom {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+        }
+
+        /* ========== RESPONSIVE: SMALL MOBILE (≤480px) ========== */
+        @media (max-width: 480px) {
+            .hero-dark {
+                min-height: auto;
+                padding: 80px 0 30px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.35rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.82rem;
+            }
+
+            .ls,
+            .ls-alt,
+            .ls-dark {
+                padding: 64px 0;
+            }
+
+            .proc-grid {
+                gap: 10px;
+            }
+
+            .proc-card {
+                padding: 16px 10px;
+            }
+
+            .cta-final {
+                padding: 64px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" fill="url(#lg1)" /><text x="50" y="62" text-anchor="middle"
+                        font-family="Montserrat,sans-serif" font-weight="900" font-size="36" fill="white">UV</text>
+                    <defs>
+                        <linearGradient id="lg1" x1="0" y1="0" x2="100" y2="100">
+                            <stop offset="0%" stop-color="#cf004d" />
+                            <stop offset="100%" stop-color="#93003c" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-logo-text">BrandByUV</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="addons.html">Add-Ons</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a><a href="about.html" class="active">About</a><a href="services.html">Services</a><a
+            href="addons.html">Add-Ons</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-dark">
+        <div class="container">
+            <p class="ey">About BrandByUV</p>
+            <h1><em>Create. Transform. Elevate.</em></h1>
+            <p class="hero-desc">Crafting unforgettable brands with strategy, design &amp; innovation. Let's build your
+                legacy.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn btn-primary">Start Your Brand Journey <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHO WE ARE ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Who We Are</p>
+                <h2>We Are More Than Designers.<br>We Are Brand Architects.</h2>
+            </div>
+            <div class="about-text fade-in">
+                <p>BrandByUV was built with one simple belief — <strong>great brands are not created by chance, they are
+                        built with clarity, consistency, and courage.</strong></p>
+                <p>We help startups, entrepreneurs, and growing businesses transform ideas into impactful brand
+                    identities that command attention and build trust.</p>
+                <p>From logo foundations to complete brand systems, we create identities that don't just look good —
+                    <strong>they work.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MISSION & VISION ===== -->
+    <section class="ls-alt">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Our Purpose</p>
+                <h2>Mission &amp; Vision</h2>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card fade-in">
+                    <div class="mv-label">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                        Our Mission
+                    </div>
+                    <h3>Empowering Ambitious Businesses</h3>
+                    <p>To empower ambitious businesses with strategic, high-impact branding that transforms perception,
+                        builds credibility, and drives long-term growth.</p>
+                    <p style="margin-top: 14px;"><strong>We don't just design visuals. We design positioning.</strong>
+                    </p>
+                </div>
+                <div class="mv-card fade-in delay-2">
+                    <div class="mv-label">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        Our Vision
+                    </div>
+                    <h3>Leading Branding Partner</h3>
+                    <p>To become a leading branding partner for emerging businesses across India and beyond — known for
+                        clarity, creativity, and consistent brand transformation.</p>
+                    <p style="margin-top: 14px;"><strong>We aim to build brands that outlive trends and create lasting
+                            market influence.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR APPROACH ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Our Approach</p>
+                <h2>How We Work</h2>
+                <p>A structured, proven creative process that turns your vision into a market-ready brand.</p>
+            </div>
+            <div class="proc-grid">
+                <div class="proc-card fade-in">
+                    <div class="proc-num">01</div>
+                    <h4>Discover</h4>
+                    <p>Understand your business, audience, goals &amp; market positioning.</p>
+                </div>
+                <div class="proc-card fade-in delay-2">
+                    <div class="proc-num">02</div>
+                    <h4>Define</h4>
+                    <p>Craft strategic foundation — tone, direction &amp; brand personality.</p>
+                </div>
+                <div class="proc-card fade-in delay-3">
+                    <div class="proc-num">03</div>
+                    <h4>Design</h4>
+                    <p>Develop strong, scalable visual systems — logos, typography, color.</p>
+                </div>
+                <div class="proc-card fade-in delay-4">
+                    <div class="proc-num">04</div>
+                    <h4>Deliver &amp; Support</h4>
+                    <p>Ensure smooth implementation with guidance &amp; post-launch support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT SETS US APART ===== -->
+    <section class="ls-alt">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">What Sets Us Apart</p>
+                <h2>Why BrandByUV?</h2>
+                <p>We balance creativity with clarity — so your brand speaks confidently in every space.</p>
+            </div>
+            <div class="diff-grid">
+                <div class="diff-item fade-in">
+                    <div class="diff-check">✔</div>
+                    <p>Strategy-Driven Design</p>
+                </div>
+                <div class="diff-item fade-in delay-2">
+                    <div class="diff-check">✔</div>
+                    <p>Structured Creative Process</p>
+                </div>
+                <div class="diff-item fade-in delay-3">
+                    <div class="diff-check">✔</div>
+                    <p>Transparent Pricing</p>
+                </div>
+                <div class="diff-item fade-in delay-1">
+                    <div class="diff-check">✔</div>
+                    <p>Client-Focused Revisions</p>
+                </div>
+                <div class="diff-item fade-in delay-2">
+                    <div class="diff-check">✔</div>
+                    <p>3-Month Support (Premium)</p>
+                </div>
+                <div class="diff-item fade-in delay-3">
+                    <div class="diff-check">✔</div>
+                    <p>Fast &amp; Professional Communication</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR IMPACT ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Our Impact</p>
+                <h2>What We've Achieved</h2>
+                <p>Every project is treated as a long-term partnership — not a one-time design task.</p>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card fade-in">
+                    <p class="stat-number" data-count="50" data-suffix="+">0</p>
+                    <p class="stat-label">Projects Delivered</p>
+                </div>
+                <div class="stat-card fade-in delay-2">
+                    <p class="stat-number" data-count="30" data-suffix="+">0</p>
+                    <p class="stat-label">Happy Clients</p>
+                </div>
+                <div class="stat-card fade-in delay-3">
+                    <p class="stat-number" data-count="8" data-suffix="+">0</p>
+                    <p class="stat-label">Industries Served</p>
+                </div>
+                <div class="stat-card fade-in delay-4">
+                    <p class="stat-number" data-count="98" data-suffix="%">0</p>
+                    <p class="stat-label">Client Satisfaction</p>
+                </div>
+            </div>
+            <ul class="impact-list fade-in">
+                <li><span>✓</span> Startups launch confidently</li>
+                <li><span>✓</span> Small businesses reposition professionally</li>
+                <li><span>✓</span> Entrepreneurs build recognizable identities</li>
+                <li><span>✓</span> Brands transition from "basic" to "market-ready"</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== BRAND PHILOSOPHY ===== -->
+    <section class="ls-alt">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Brand Philosophy</p>
+                <h2>We Believe</h2>
+            </div>
+            <div class="philo-card fade-in">
+                <h3>Our Guiding Principles</h3>
+                <p>A logo is not a brand.<br>A color palette is not a strategy.<br>A website is not positioning.</p>
+                <span class="highlight">A brand is perception — and perception is everything.</span>
+                <p style="margin-top: 18px;">That's why we design with <strong style="color: #fff;">intention, not
+                        impulse.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="fade-in">Ready to Elevate Your Brand?</h2>
+            <p class="fade-in">If you have a vision, we have the strategy to shape it. If you have ambition, we have the
+                structure to amplify it.</p>
+            <div class="cb fade-in">
+                <a href="contact.html" class="btn btn-primary">Start New Project <span>→</span></a>
+                <a href="https://wa.me/919544464144" class="btn btn-outline-white" target="_blank">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARED FOOTER (injected via JS) -->
+    <div id="shared-footer"></div>
+
+    <!-- SHARED FAB (injected via JS) -->
+    <div id="shared-fab"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

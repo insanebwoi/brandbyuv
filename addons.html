@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PRIMARY SEO CONFIGURED -->
+    <title>Branding Add-Ons & Extras — BrandByUV</title>
+    <meta name="title" content="Branding Add-Ons & Extras — BrandByUV">
+    <meta name="description" content="Elevate your project with BrandByUV Add-Ons. Pitch decks, premium packaging, brand guidelines, UI/UX, and expedited delivery for your brand.">
+    <meta name="author" content="Ihsan MK — BrandByUV">
+    <meta name="keywords" content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
+    <link rel="canonical" href="https://brandbyuv.com/addons.html">
+
+    <!-- OPEN GRAPH / FACEBOOK -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brandbyuv.com/addons.html">
+    <meta property="og:title" content="Branding Add-Ons & Extras — BrandByUV">
+    <meta property="og:description" content="Elevate your project with BrandByUV Add-Ons. Pitch decks, premium packaging, brand guidelines, UI/UX, and expedited delivery for your brand.">
+    <meta property="og:image" content="https://brandbyuv.com/images/og-image.jpg">
+
+    <!-- TWITTER / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brandbyuv.com/addons.html">
+    <meta property="twitter:title" content="Branding Add-Ons & Extras — BrandByUV">
+    <meta property="twitter:description" content="Elevate your project with BrandByUV Add-Ons. Pitch decks, premium packaging, brand guidelines, UI/UX, and expedited delivery for your brand.">
+    <meta property="twitter:image" content="https://brandbyuv.com/images/og-image.jpg">
+            <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        /* ================================================================
+           ADD-ONS PAGE — Matches Home Page Design System
+           ================================================================ */
+
+        /* ---------- DARK BANNER ---------- */
+        .hero-dark {
+            padding: 160px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .hero-dark h1 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero-dark h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #ff4d8d, #cf004d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-dark .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255, 223, 236, 0.7);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hero-dark .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 223, 236, 0.6);
+            margin-bottom: 14px;
+        }
+
+        /* ---------- SECTION COMMON ---------- */
+        .ls {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .ls-alt {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .ls-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .ls-header .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .ls-header h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .ls-header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ---------- ADD-ON CARDS ---------- */
+        .ao-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ao-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px 26px 28px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ao-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .ao-card.featured {
+            border: 2px solid var(--accent);
+        }
+
+        .ao-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .ao-card.wide {
+            grid-column: span 4;
+        }
+
+        /* Premium dark card for Website */
+        .ao-card.dark-card {
+            background: radial-gradient(ellipse at 30% 0%, rgba(147, 0, 60, 0.25) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(207, 0, 77, 0.08) 0%, transparent 50%),
+                #0f0f17;
+            border-color: rgba(207, 0, 77, 0.25);
+        }
+
+        .ao-card.dark-card h3 {
+            color: #fff;
+        }
+
+        .ao-card.dark-card>p {
+            color: rgba(255, 223, 236, 0.7);
+        }
+
+        .ao-card.dark-card .ao-price {
+            color: #ff4d8d;
+        }
+
+        .ao-card.dark-card .ao-features li {
+            color: rgba(255, 223, 236, 0.85);
+            border-bottom-color: rgba(255, 223, 236, 0.08);
+        }
+
+        .ao-card.dark-card .ao-features li .ck {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .ao-card.dark-card .ao-icon {
+            background: var(--gradient-accent);
+        }
+
+        .ao-card.dark-card .ao-icon svg {
+            stroke: #fff;
+        }
+
+        .ao-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .ao-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: var(--radius);
+            background: rgba(207, 0, 77, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ao-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 1.8;
+        }
+
+        .ao-card.featured .ao-icon {
+            background: var(--gradient-accent);
+        }
+
+        .ao-card.featured .ao-icon svg {
+            stroke: #fff;
+        }
+
+        .ao-price {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        .ao-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .ao-card>p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .ao-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px;
+            flex-grow: 1;
+        }
+
+        .ao-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 0;
+            font-size: 0.85rem;
+            color: var(--text);
+            border-bottom: 1px solid rgba(147, 0, 60, 0.06);
+        }
+
+        .ao-features li:last-child {
+            border-bottom: none;
+        }
+
+        .ao-features li .ck {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            font-weight: 900;
+            background: rgba(207, 0, 77, 0.08);
+            color: var(--accent);
+        }
+
+        .ao-card.featured .ao-features li .ck {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .ao-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Wide card features in 2 columns */
+        .ao-card.wide .ao-features {
+            columns: 2;
+            column-gap: 28px;
+        }
+
+        .ao-card.wide .ao-features li {
+            break-inside: avoid;
+        }
+
+        /* Bonus badges */
+        .ao-bonuses {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .ao-bonus {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.68rem;
+            letter-spacing: 0.5px;
+        }
+
+        .ao-bonus.free {
+            background: rgba(0, 200, 83, 0.12);
+            color: #00c853;
+            border: 1px solid rgba(0, 200, 83, 0.2);
+        }
+
+        .ao-bonus svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* ---------- COMBO BUNDLES ---------- */
+        .bundle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bundle-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px 26px 28px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .bundle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .bundle-card.featured {
+            border: 2px solid var(--accent);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .bundle-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        .bundle-tag {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 40px;
+            margin: 0 auto 14px;
+            width: fit-content;
+        }
+
+        .bundle-tag.basic {
+            background: rgba(207, 0, 77, 0.08);
+            color: var(--accent);
+        }
+
+        .bundle-tag.popular {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .bundle-tag.premium {
+            background: rgba(92, 6, 38, 0.08);
+            color: var(--dark);
+        }
+
+        .bundle-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .bundle-combo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .bundle-card>p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .bundle-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .bundle-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 0;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .bundle-features li .ck {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            font-weight: 900;
+            background: rgba(207, 0, 77, 0.08);
+            color: var(--accent);
+        }
+
+        .bundle-card.featured .bundle-features li .ck {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .bundle-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ---------- CTA FINAL ---------- */
+        .cta-final {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .cta-final h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: #feecf3;
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 223, 236, 0.7);
+            font-size: 1rem;
+            max-width: 540px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-final .cb {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ---------- FOOTER LINKS ROW ---------- */
+        .footer-links-row {
+            display: contents;
+        }
+
+        /* ========== RESPONSIVE: TABLET (≤1024px) ========== */
+        @media (max-width: 1024px) {
+            .hero-dark {
+                padding: 130px 0 50px;
+            }
+
+            .ao-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .ao-card.wide {
+                grid-column: span 2;
+            }
+
+            .bundle-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 520px;
+            }
+        }
+
+        /* ========== RESPONSIVE: MOBILE (≤768px) ========== */
+        @media (max-width: 768px) {
+            .hero-dark {
+                padding: 100px 0 40px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.88rem;
+            }
+
+            .ls,
+            .ls-alt {
+                padding: 64px 0;
+            }
+
+            .ls-header {
+                margin-bottom: 32px;
+            }
+
+            .ls-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .ls-header p {
+                font-size: 0.82rem;
+            }
+
+            .ao-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .ao-card.wide {
+                grid-column: span 1;
+            }
+
+            .ao-card.wide .ao-features {
+                columns: 1;
+            }
+
+            .ao-card {
+                padding: 26px 20px 24px;
+            }
+
+            .ao-price {
+                font-size: 1.4rem;
+            }
+
+            .ao-card h3 {
+                font-size: 1.05rem;
+            }
+
+            .ao-features li {
+                font-size: 0.8rem;
+            }
+
+            .bundle-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                max-width: 100%;
+            }
+
+            .bundle-card {
+                padding: 26px 20px 24px;
+            }
+
+            .bundle-card h3 {
+                font-size: 1.05rem;
+            }
+
+            .bundle-features li {
+                font-size: 0.8rem;
+            }
+
+            .cta-final {
+                padding: 64px 0;
+            }
+
+            .cta-final h2 {
+                font-size: 1.4rem;
+            }
+
+            .cta-final p {
+                font-size: 0.85rem;
+            }
+
+            .cta-final .cb .btn {
+                padding: 10px 18px;
+                font-size: 0.75rem;
+            }
+
+            /* Footer mobile */
+            .footer-links-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer-col.footer-touch {
+                padding: 24px 20px;
+                background: linear-gradient(135deg, rgba(207, 0, 77, 0.08), rgba(147, 0, 60, 0.12));
+                border-radius: var(--radius-lg);
+                border: 1px solid rgba(207, 0, 77, 0.15);
+                margin-top: 12px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col.footer-touch h4 {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .footer-col.footer-touch a {
+                padding: 7px 0;
+                font-size: 0.88rem;
+                color: rgba(255, 223, 236, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .footer-col.footer-touch a:hover {
+                color: #fff;
+            }
+
+            .footer-brand {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-brand .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+        }
+
+        /* ========== RESPONSIVE: SMALL MOBILE (≤480px) ========== */
+        @media (max-width: 480px) {
+            .hero-dark {
+                padding: 80px 0 30px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.35rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.82rem;
+            }
+
+            .ls,
+            .ls-alt {
+                padding: 48px 0;
+            }
+
+            .ao-card {
+                padding: 22px 16px 20px;
+            }
+
+            .ao-price {
+                font-size: 1.25rem;
+            }
+
+            .bundle-card {
+                padding: 22px 16px 20px;
+            }
+
+            .cta-final {
+                padding: 48px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" fill="url(#lg1)" /><text x="50" y="62" text-anchor="middle"
+                        font-family="Montserrat,sans-serif" font-weight="900" font-size="36" fill="white">UV</text>
+                    <defs>
+                        <linearGradient id="lg1" x1="0" y1="0" x2="100" y2="100">
+                            <stop offset="0%" stop-color="#cf004d" />
+                            <stop offset="100%" stop-color="#93003c" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-logo-text">BrandByUV</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="addons.html" class="active">Add-Ons</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a
+            href="addons.html" class="active">Add-Ons</a><a href="portfolio.html">Portfolio</a><a
+            href="contact.html">Contact</a>
+    </div>
+
+    <!-- ===== BANNER ===== -->
+    <section class="hero-dark">
+        <div class="container">
+            <p class="ey">Add-On Packages</p>
+            <h1>Extend Your Brand <em>Further</em></h1>
+            <p class="hero-desc">Enhance your brand identity with professional add-on services. Combine with any
+                branding package for maximum impact.</p>
+        </div>
+    </section>
+
+    <!-- ===== ADD-ONS GRID ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Available Add-Ons</p>
+                <h2>Professional Brand Extensions</h2>
+                <p>Each add-on is designed to work seamlessly with your core branding package.</p>
+            </div>
+            <div class="ao-grid">
+
+                <!-- Letterhead -->
+                <div class="ao-card fade-in">
+                    <div class="ao-top">
+                        <div class="ao-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </div>
+                        <div class="ao-price">₹499</div>
+                    </div>
+                    <h3>Letterhead Design</h3>
+                    <p>Print-ready professional letterhead designs that elevate your business correspondence.</p>
+                    <ul class="ao-features">
+                        <li><span class="ck">✓</span> Custom Letterhead Layout</li>
+                        <li><span class="ck">✓</span> Matching Header & Footer</li>
+                        <li><span class="ck">✓</span> Print-Ready Files (PDF, AI)</li>
+                        <li><span class="ck">✓</span> Digital-Friendly Version</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Add to Package →</a>
+                </div>
+
+                <!-- Business Card -->
+                <div class="ao-card fade-in delay-2">
+                    <div class="ao-top">
+                        <div class="ao-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                                <line x1="1" y1="10" x2="23" y2="10" />
+                            </svg>
+                        </div>
+                        <div class="ao-price">₹599</div>
+                    </div>
+                    <h3>Business Card Design</h3>
+                    <p>Make a lasting first impression with professionally designed business cards.</p>
+                    <ul class="ao-features">
+                        <li><span class="ck">✓</span> 2 Unique Design Concepts</li>
+                        <li><span class="ck">✓</span> Front & Back Design</li>
+                        <li><span class="ck">✓</span> Print-Ready + Digital Formats</li>
+                        <li><span class="ck">✓</span> 1 Revision Round</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Add to Package →</a>
+                </div>
+
+                <!-- Social Media Kit (Featured) -->
+                <div class="ao-card featured fade-in delay-3">
+                    <div class="ao-top">
+                        <div class="ao-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </div>
+                        <div class="ao-price">₹1,299</div>
+                    </div>
+                    <h3>Social Media Kit</h3>
+                    <p>Complete social media presence with branded templates and profile designs.</p>
+                    <ul class="ao-features">
+                        <li><span class="ck">✓</span> 15 Editable Canva Templates</li>
+                        <li><span class="ck">✓</span> Profile & Cover Designs</li>
+                        <li><span class="ck">✓</span> Story Templates</li>
+                        <li><span class="ck">✓</span> 2 Revision Rounds</li>
+                        <li><span class="ck">✓</span> Brand-Consistent Layouts</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Add to Package →</a>
+                </div>
+
+                <!-- Merchandise Design -->
+                <div class="ao-card fade-in delay-1">
+                    <div class="ao-top">
+                        <div class="ao-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.38 3.46L16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 1.86v14.88a.5.5 0 0 0 .74.44l5-2.9 4 2.9 4-2.9 5 2.9a.5.5 0 0 0 .74-.44V5.32a2 2 0 0 0-1.34-1.86z" />
+                            </svg>
+                        </div>
+                        <div class="ao-price">₹1,999</div>
+                    </div>
+                    <h3>Merchandise Design</h3>
+                    <p>Brand your products with professional merchandise designs ready for production.</p>
+                    <ul class="ao-features">
+                        <li><span class="ck">✓</span> 5 Product Designs</li>
+                        <li><span class="ck">✓</span> Print-Ready + Vector Files</li>
+                        <li><span class="ck">✓</span> Multiple Product Mockups</li>
+                        <li><span class="ck">✓</span> 3 Revision Rounds</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Add to Package →</a>
+                </div>
+
+                <!-- Website Design (Wide + Dark Premium) -->
+                <div class="ao-card dark-card wide fade-in delay-2">
+                    <div class="ao-top">
+                        <div class="ao-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                        <div class="ao-price">₹8,999</div>
+                    </div>
+                    <h3>Website Design & Development</h3>
+                    <p>A stunning, responsive website that perfectly represents your brand online. From layout to
+                        launch, we handle everything.</p>
+                    <div class="ao-bonuses">
+                        <span class="ao-bonus free">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            1 Year Free Hosting
+                        </span>
+                        <span class="ao-bonus free">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            1 Year Free Domain (.in / .com)
+                        </span>
+                    </div>
+                    <ul class="ao-features">
+                        <li><span class="ck">✓</span> Custom Layout Design</li>
+                        <li><span class="ck">✓</span> Fully Responsive Design</li>
+                        <li><span class="ck">✓</span> Basic SEO Setup</li>
+                        <li><span class="ck">✓</span> Hosting Setup Support</li>
+                        <li><span class="ck">✓</span> CMS Integration</li>
+                        <li><span class="ck">✓</span> Contact Form Setup</li>
+                        <li><span class="ck">✓</span> Social Media Links</li>
+                        <li><span class="ck">✓</span> Performance Optimized</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Add to Package →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMBO BUNDLES ===== -->
+    <section class="ls-alt">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Smart Combos</p>
+                <h2>Bundle & Save</h2>
+                <p>Combine add-ons with any core branding package for the best value and brand consistency.</p>
+            </div>
+            <div class="bundle-grid">
+
+                <!-- Starter Bundle -->
+                <div class="bundle-card fade-in">
+                    <span class="bundle-tag basic">Starter</span>
+                    <h3>Starter Bundle</h3>
+                    <p class="bundle-combo">Essential + Business Card</p>
+                    <p>Logo design + professionally designed business cards.</p>
+                    <ul class="bundle-features">
+                        <li><span class="ck">✓</span> Everything in Essential</li>
+                        <li><span class="ck">✓</span> 2 Business Card Concepts</li>
+                        <li><span class="ck">✓</span> Print-Ready Files</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Get This Bundle</a>
+                </div>
+
+                <!-- Growth Bundle (Featured) -->
+                <div class="bundle-card featured fade-in delay-2">
+                    <span class="bundle-tag popular">Most Popular</span>
+                    <h3>Growth Bundle</h3>
+                    <p class="bundle-combo">Comprehensive + Social Kit</p>
+                    <p>Full brand identity + complete social media presence.</p>
+                    <ul class="bundle-features">
+                        <li><span class="ck">✓</span> Everything in Comprehensive</li>
+                        <li><span class="ck">✓</span> 15 Canva Templates</li>
+                        <li><span class="ck">✓</span> Profile & Cover Designs</li>
+                        <li><span class="ck">✓</span> Story Templates</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Get This Bundle</a>
+                </div>
+
+                <!-- Complete Bundle -->
+                <div class="bundle-card fade-in delay-3">
+                    <span class="bundle-tag premium">Premium</span>
+                    <h3>Complete Bundle</h3>
+                    <p class="bundle-combo">Ultimate + Website</p>
+                    <p>Full branding + custom responsive website.</p>
+                    <ul class="bundle-features">
+                        <li><span class="ck">✓</span> Everything in Ultimate</li>
+                        <li><span class="ck">✓</span> Custom Website Design</li>
+                        <li><span class="ck">✓</span> SEO + Hosting Support</li>
+                        <li><span class="ck">✓</span> CMS Integration</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Get This Bundle</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="fade-in">Need a Custom Package?</h2>
+            <p class="fade-in">Can't find exactly what you need? We create custom packages tailored to your brand
+                goals.</p>
+            <div class="cb fade-in">
+                <a href="contact.html" class="btn btn-primary">Get Custom Quote <span>→</span></a>
+                <a href="https://wa.me/919544464144" class="btn btn-outline-white" target="_blank">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARED FOOTER & FAB -->
+    <div id="shared-footer"></div>
+    <div id="shared-fab"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

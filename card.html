@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PRIMARY SEO CONFIGURED -->
+    <title>Ihsan MK — Founder & Brand Strategist | BrandByUV</title>
+    <meta name="title" content="Ihsan MK — Founder & Brand Strategist | BrandByUV">
+    <meta name="description" content="Digital Business Card of Ihsan MK, Founder and Brand Strategist at India's premium branding agency, BrandByUV.">
+    <meta name="author" content="Ihsan MK — BrandByUV">
+    <meta name="keywords" content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
+    <link rel="canonical" href="https://brandbyuv.com/card.html">
+
+    <!-- OPEN GRAPH / FACEBOOK -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brandbyuv.com/card.html">
+    <meta property="og:title" content="Ihsan MK — Founder & Brand Strategist | BrandByUV">
+    <meta property="og:description" content="Digital Business Card of Ihsan MK, Founder and Brand Strategist at India's premium branding agency, BrandByUV.">
+    <meta property="og:image" content="https://brandbyuv.com/images/og-image.jpg">
+
+    <!-- TWITTER / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brandbyuv.com/card.html">
+    <meta property="twitter:title" content="Ihsan MK — Founder & Brand Strategist | BrandByUV">
+    <meta property="twitter:description" content="Digital Business Card of Ihsan MK, Founder and Brand Strategist at India's premium branding agency, BrandByUV.">
+    <meta property="twitter:image" content="https://brandbyuv.com/images/og-image.jpg">
+            <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        /* ================================================================
+           DIGITAL BUSINESS CARD — STANDALONE INTERACTIVE UI
+           ================================================================ */
+
+        /* BASE & LAYOUT */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            /* Strict white screen as requested */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-body), 'Inter', sans-serif;
+            overflow: hidden;
+            background-image:
+                radial-gradient(circle at center, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+        }
+
+        /* 3D SCENE SETTINGS */
+        .scene {
+            width: 440px;
+            height: 260px;
+            perspective: 1400px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.2), 0 20px 40px -20px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+        }
+
+        .scene.is-flipped .card {
+            transform: rotateY(180deg);
+        }
+
+        /* CARD FACES */
+        .card-face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* ----- FRONT (PREMIUM DARK) ----- */
+        .card-front {
+            background: linear-gradient(145deg, #0a0a0f 0%, #1a1a24 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glowing background orb */
+        .card-front::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(207, 0, 77, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Noise Texture */
+        .noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .front-logo {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .front-logo svg {
+            width: 76px;
+            height: 76px;
+            margin-bottom: 14px;
+            filter: drop-shadow(0 4px 16px rgba(207, 0, 77, 0.4));
+        }
+
+        .front-logo h1 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff, #ffe6f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .front-logo .tagline {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* ----- BACK (CLEAN WHITE) ----- */
+        .card-back {
+            background: #ffffff;
+            transform: rotateY(180deg);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            padding: 36px 40px;
+        }
+
+        /* Color Ribbon Accent */
+        .card-back::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(180deg, #ff4d8d, #cf004d, #93003c);
+        }
+
+        /* Subtle watermark logo on back */
+        .watermark {
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 150px;
+            color: rgba(0, 0, 0, 0.02);
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .back-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .person-info {
+            margin-bottom: 16px;
+        }
+
+        .person-info h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: #0a0a0f;
+            margin: 0 0 4px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .person-info p {
+            font-size: 0.78rem;
+            color: #cf004d;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .contact-item:hover {
+            color: #cf004d;
+            transform: translateX(4px);
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            color: #cf004d;
+            flex-shrink: 0;
+            background: rgba(207, 0, 77, 0.08);
+            padding: 4px;
+            border-radius: 6px;
+        }
+
+        .qr-section {
+            width: 95px;
+            height: 95px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            margin-left: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            z-index: 2;
+        }
+
+        .qr-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+
+        /* CARD INNER FLIP HINTS */
+        .click-to-flip-front,
+        .click-to-flip-back {
+            position: absolute;
+            bottom: 24px;
+            right: 30px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+            z-index: 10;
+        }
+
+        .click-to-flip-front {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .click-to-flip-back {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .card-actions {
+            position: absolute;
+            bottom: -110px;
+            display: flex;
+            gap: 16px;
+            z-index: 20;
+        }
+
+        .action-btn {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(207, 0, 77, 0.15);
+            color: #cf004d;
+            border-color: #cf004d;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 500px) {
+            .scene {
+                /* Force Exact Desktop Values to Keep Parity */
+                width: 440px;
+                height: 260px;
+                max-width: none;
+                max-height: none;
+                transform: scale(0.82);
+            }
+
+            .card-actions {
+                bottom: -90px;
+                transform: scale(0.85);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .scene {
+                transform: scale(0.74);
+            }
+        }
+
+        @media (max-width: 360px) {
+            .scene {
+                transform: scale(0.65);
+            }
+        }
+
+        /* CUSTOM CURSOR SYSTEM */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #cf004d;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(207, 0, 77, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        /* Hide system cursor on desktop */
+        @media (min-width: 769px) {
+
+            body,
+            .scene,
+            a,
+            .action-btn {
+                cursor: none !important;
+            }
+        }
+
+        /* Hide custom cursor on touch/mobile */
+        @media (hover: none) and (pointer: coarse),
+        (max-width: 768px) {
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 3D Scene Wrapper -->
+    <div class="scene" id="cardScene">
+
+        <div class="card" id="cardElement">
+
+            <!-- ====== FRONT ====== -->
+            <div class="card-face card-front">
+                <div class="noise"></div>
+                <div class="front-logo">
+                    <!-- BrandByUV Gradient Logo -->
+                    <svg viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="48" fill="url(#lg-card)" />
+                        <text x="50" y="62" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900"
+                            font-size="36" fill="white">UV</text>
+                        <defs>
+                            <linearGradient id="lg-card" x1="0" y1="0" x2="100" y2="100">
+                                <stop offset="0%" stop-color="#ff4d8d" />
+                                <stop offset="100%" stop-color="#cf004d" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <h1>BrandByUV</h1>
+                    <div class="tagline">Strategic Branding</div>
+                </div>
+                <div class="click-to-flip-front">Click here to flip ➔</div>
+            </div>
+
+            <!-- ====== BACK ====== -->
+            <div class="card-face card-back">
+                <div class="watermark">UV</div>
+
+                <div class="back-content">
+                    <div class="person-info">
+                        <h2>Ihsan MK.</h2>
+                        <p>Founder & Brand Strategist</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <!-- Phone -->
+                        <a href="tel:+919544464144" class="contact-item" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            +91 95444 64144
+                        </a>
+                        <!-- Email -->
+                        <a href="mailto:hello@brandbyuv.com" class="contact-item" onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            hello@brandbyuv.com
+                        </a>
+                        <!-- Website -->
+                        <a href="https://brandbyuv.com" target="_blank" class="contact-item"
+                            onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                            www.brandbyuv.com
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/brandbyuv.in" target="_blank" class="contact-item"
+                            onclick="event.stopPropagation();">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            @brandbyuv.in
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SVG QR Code Icon representing URL -->
+                <div class="qr-section">
+                    <svg viewBox="0 0 100 100" fill="none" stroke="#222" stroke-width="6" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <!-- Top Left -->
+                        <rect x="15" y="15" width="25" height="25" rx="4" />
+                        <rect x="22" y="22" width="11" height="11" rx="2" fill="#222" />
+                        <!-- Top Right -->
+                        <rect x="60" y="15" width="25" height="25" rx="4" />
+                        <rect x="67" y="22" width="11" height="11" rx="2" fill="#222" />
+                        <!-- Bottom Left -->
+                        <rect x="15" y="60" width="25" height="25" rx="4" />
+                        <rect x="22" y="67" width="11" height="11" rx="2" fill="#222" />
+                        <!-- Pixels -->
+                        <rect x="60" y="60" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <rect x="75" y="60" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <rect x="75" y="75" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <rect x="60" y="75" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <!-- Middle random dots -->
+                        <rect x="45" y="15" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <rect x="45" y="45" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                        <rect x="15" y="45" width="10" height="10" rx="2" fill="#222" stroke="none" />
+                    </svg>
+                </div>
+                <div class="click-to-flip-back">Click here to flip ↺</div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <!-- External Floating Actions -->
+    <div class="card-actions">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919544464144" target="_blank" class="action-btn" title="Chat on WhatsApp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+        </a>
+        <!-- Save Contact (vCard JS Logic below) -->
+        <a href="#" id="downloadVcard" class="action-btn" title="Save to Contacts">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                <polyline points="7 3 7 8 15 8"></polyline>
+            </svg>
+        </a>
+        <!-- Back to Website -->
+        <a href="index.html" class="action-btn" title="Visit Website">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        const scene = document.getElementById('cardScene');
+        const card = document.getElementById('cardElement');
+
+        // 1. FLIP LOGIC
+        scene.addEventListener('click', () => {
+            scene.classList.toggle('is-flipped');
+        });
+
+        // 2. CUSTOM CURSOR & ANIMATION
+        const cursorDot = document.createElement('div');
+        cursorDot.className = 'cursor-dot';
+        const cursorOutline = document.createElement('div');
+        cursorOutline.className = 'cursor-outline';
+        document.body.appendChild(cursorDot);
+        document.body.appendChild(cursorOutline);
+
+        let cursorX = 0, cursorY = 0;
+        let outlineX = 0, outlineY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+            cursorDot.style.left = `${cursorX}px`;
+            cursorDot.style.top = `${cursorY}px`;
+        });
+
+        // Enlarge cursor smoothly on interactive elements
+        const interactiveEls = document.querySelectorAll('a, .scene');
+        interactiveEls.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(207, 0, 77, 0.05)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+
+        function animateCursor() {
+            outlineX += (cursorX - outlineX) * 0.15;
+            outlineY += (cursorY - outlineY) * 0.15;
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // 3. 3D PARALLAX (MOUSE & GYROSCOPE)
+        let isHovering = false;
+        let targetRotateX = 0;
+        let targetRotateY = 0;
+        let currentRotateX = 0;
+        let currentRotateY = 0;
+
+        function updateTransforms() {
+            // Smoothly interpolate current towards target
+            currentRotateX += (targetRotateX - currentRotateX) * 0.1;
+            currentRotateY += (targetRotateY - currentRotateY) * 0.1;
+
+            if (scene.classList.contains('is-flipped')) {
+                card.style.transform = `rotateY(${180 + currentRotateY}deg) rotateX(${-currentRotateX}deg)`;
+            } else {
+                card.style.transform = `rotateY(${currentRotateY}deg) rotateX(${currentRotateX}deg)`;
+            }
+            requestAnimationFrame(updateTransforms);
+        }
+        updateTransforms();
+
+        // Desktop Mouse Tracking
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                targetRotateY = (window.innerWidth / 2 - e.pageX) / 35;
+                targetRotateX = (window.innerHeight / 2 - e.pageY) / 35;
+                isHovering = true;
+            }
+        });
+
+        // Reset tracking returning to zero when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 768) {
+                targetRotateX = 0;
+                targetRotateY = 0;
+                isHovering = false;
+            }
+        });
+
+        // Mobile Gyroscope Tracking
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', (e) => {
+                if (window.innerWidth <= 768 && e.gamma !== null && e.beta !== null) {
+                    // Gamma is left-to-right tilt in degrees, where right is positive
+                    // Beta is front-to-back tilt in degrees, where front is positive
+
+                    // Clamp to max 25 degrees tilt
+                    let rawGamma = Math.max(-25, Math.min(25, e.gamma));
+                    let rawBeta = Math.max(-25, Math.min(25, e.beta - 40)); // offset beta so holding phone 40deg acts as 'center'
+
+                    targetRotateY = rawGamma;
+                    targetRotateX = -rawBeta;
+                }
+            }, true);
+        }
+
+        // 4. VCARD GENERATION
+        document.getElementById('downloadVcard').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:MK;Ihsan;;;
+FN:Ihsan MK
+ORG:BrandByUV
+TITLE:Founder & Brand Strategist
+TEL;TYPE=CELL:+919544464144
+EMAIL:hello@brandbyuv.com
+URL:https://brandbyuv.com
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: "text/vcard" });
+            const url = URL.createObjectURL(blob);
+
+            const link = document.createElement('a');
+            link.style.display = 'none';
+            link.href = url;
+            link.download = 'IhsanMK_BrandByUV.vcf';
+            document.body.appendChild(link);
+            link.click();
+
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+
+</html>

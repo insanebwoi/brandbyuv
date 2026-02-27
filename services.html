@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PRIMARY SEO CONFIGURED -->
+    <title>Branding Services & Pricing — BrandByUV</title>
+    <meta name="title" content="Branding Services & Pricing — BrandByUV">
+    <meta name="description" content="Explore premium branding solutions by BrandByUV. From Essential Logo Design to Ultimate Brand Identity & UI/UX. Transparent pricing, no hidden costs.">
+    <meta name="author" content="Ihsan MK — BrandByUV">
+    <meta name="keywords" content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
+    <link rel="canonical" href="https://brandbyuv.com/services.html">
+
+    <!-- OPEN GRAPH / FACEBOOK -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brandbyuv.com/services.html">
+    <meta property="og:title" content="Branding Services & Pricing — BrandByUV">
+    <meta property="og:description" content="Explore premium branding solutions by BrandByUV. From Essential Logo Design to Ultimate Brand Identity & UI/UX. Transparent pricing, no hidden costs.">
+    <meta property="og:image" content="https://brandbyuv.com/images/og-image.jpg">
+
+    <!-- TWITTER / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brandbyuv.com/services.html">
+    <meta property="twitter:title" content="Branding Services & Pricing — BrandByUV">
+    <meta property="twitter:description" content="Explore premium branding solutions by BrandByUV. From Essential Logo Design to Ultimate Brand Identity & UI/UX. Transparent pricing, no hidden costs.">
+    <meta property="twitter:image" content="https://brandbyuv.com/images/og-image.jpg">
+            <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <style>
+        /* ================================================================
+           SERVICES PAGE — Matches Home Page Design System
+           ================================================================ */
+
+        /* ---------- DARK BANNER ---------- */
+        .hero-dark {
+            padding: 160px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .hero-dark h1 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero-dark h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, #ff4d8d, #cf004d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-dark .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255, 223, 236, 0.7);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hero-dark .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 223, 236, 0.6);
+            margin-bottom: 14px;
+        }
+
+        /* ---------- SECTION COMMON ---------- */
+        .ls {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .ls-alt {
+            padding: 80px 0;
+            background: var(--off-white);
+        }
+
+        .ls-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .ls-header .ey {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .ls-header h2 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .ls-header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ---------- SERVICE CARDS (new design) ---------- */
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .svc-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px 32px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(207, 0, 77, 0.2);
+        }
+
+        .svc-card.featured {
+            border: 2px solid var(--accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .svc-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .svc-tag {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 40px;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .svc-tag.starter {
+            background: rgba(207, 0, 77, 0.08);
+            color: var(--accent);
+        }
+
+        .svc-tag.popular {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .svc-tag.premium {
+            background: rgba(92, 6, 38, 0.08);
+            color: var(--dark);
+        }
+
+        .svc-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .svc-price {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .svc-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .svc-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            flex-grow: 1;
+        }
+
+        .svc-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.88rem;
+            color: var(--text);
+            border-bottom: 1px solid rgba(147, 0, 60, 0.06);
+        }
+
+        .svc-features li:last-child {
+            border-bottom: none;
+        }
+
+        .svc-features li .ck {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 900;
+        }
+
+        .svc-card .ck {
+            background: rgba(207, 0, 77, 0.08);
+            color: var(--accent);
+        }
+
+        .svc-card.featured .ck {
+            background: var(--gradient-accent);
+            color: #fff;
+        }
+
+        .svc-best {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            padding: 12px 16px;
+            background: rgba(207, 0, 77, 0.04);
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+        }
+
+        .svc-best strong {
+            color: var(--dark);
+        }
+
+        .svc-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ---------- COMPARISON TABLE ---------- */
+        .compare-wrap {
+            overflow-x: auto;
+            margin: 0 auto;
+            max-width: 900px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .compare-table thead tr {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .compare-table th {
+            padding: 16px 18px;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .compare-table th:first-child {
+            text-align: left;
+        }
+
+        .compare-table th .plan-price {
+            font-weight: 400;
+            font-size: 0.78rem;
+            opacity: 0.8;
+        }
+
+        .compare-table th.popular-col {
+            background: var(--accent);
+        }
+
+        .compare-table td {
+            padding: 14px 18px;
+            font-size: 0.88rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .compare-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .compare-table td.popular-col {
+            background: var(--off-white);
+        }
+
+        .compare-table .check-yes {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .compare-table .check-no {
+            color: rgba(147, 0, 60, 0.2);
+        }
+
+        /* ---------- GUARANTEE BADGE ---------- */
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+            padding: 14px 24px;
+            background: linear-gradient(145deg, rgba(207, 0, 77, 0.06), rgba(147, 0, 60, 0.1));
+            border: 1px solid rgba(207, 0, 77, 0.12);
+            border-radius: var(--radius-lg);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guarantee svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .guarantee span {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--dark);
+        }
+
+        /* ---------- ADD-ONS CTA ---------- */
+        .addons-cta {
+            text-align: center;
+        }
+
+        .addons-cta p.desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 520px;
+            margin: 0 auto 24px;
+        }
+
+        /* ---------- CTA FINAL ---------- */
+        .cta-final {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147, 0, 60, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(207, 0, 77, 0.06) 0%, transparent 50%),
+                #0a0a0f;
+        }
+
+        .cta-final h2 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            color: #feecf3;
+            margin-bottom: 16px;
+        }
+
+        .cta-final p {
+            color: rgba(255, 223, 236, 0.7);
+            font-size: 1rem;
+            max-width: 540px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .cta-final .cb {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ---------- FOOTER LINKS ROW ---------- */
+        .footer-links-row {
+            display: contents;
+        }
+
+        /* ========== RESPONSIVE: TABLET (≤1024px) ========== */
+        @media (max-width: 1024px) {
+            .hero-dark {
+                padding: 130px 0 50px;
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 520px;
+            }
+        }
+
+        /* ========== RESPONSIVE: MOBILE (≤768px) ========== */
+        @media (max-width: 768px) {
+            .hero-dark {
+                padding: 100px 0 40px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.88rem;
+            }
+
+            .ls,
+            .ls-alt {
+                padding: 64px 0;
+            }
+
+            .ls-header {
+                margin-bottom: 32px;
+            }
+
+            .ls-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .ls-header p {
+                font-size: 0.82rem;
+            }
+
+            .svc-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                max-width: 100%;
+            }
+
+            .svc-card {
+                padding: 28px 22px 24px;
+            }
+
+            .svc-price {
+                font-size: 1.8rem;
+            }
+
+            .svc-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .svc-features li {
+                font-size: 0.82rem;
+                padding: 7px 0;
+            }
+
+            .svc-desc {
+                font-size: 0.8rem;
+            }
+
+            .svc-best {
+                font-size: 0.75rem;
+            }
+
+            .compare-table th {
+                font-size: 0.75rem;
+                padding: 12px 10px;
+            }
+
+            .compare-table td {
+                font-size: 0.78rem;
+                padding: 10px;
+            }
+
+            .cta-final {
+                padding: 64px 0;
+            }
+
+            .cta-final h2 {
+                font-size: 1.4rem;
+            }
+
+            .cta-final p {
+                font-size: 0.85rem;
+            }
+
+            .cta-final .cb .btn {
+                padding: 10px 18px;
+                font-size: 0.75rem;
+            }
+
+            /* Footer mobile */
+            .footer-links-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .footer-col.footer-touch {
+                padding: 24px 20px;
+                background: linear-gradient(135deg, rgba(207, 0, 77, 0.08), rgba(147, 0, 60, 0.12));
+                border-radius: var(--radius-lg);
+                border: 1px solid rgba(207, 0, 77, 0.15);
+                margin-top: 12px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col.footer-touch h4 {
+                font-size: 1.1rem;
+                margin-bottom: 16px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .footer-col.footer-touch a {
+                padding: 7px 0;
+                font-size: 0.88rem;
+                color: rgba(255, 223, 236, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .footer-col.footer-touch a:hover {
+                color: #fff;
+            }
+
+            .footer-brand {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-brand .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+        }
+
+        /* ========== RESPONSIVE: SMALL MOBILE (≤480px) ========== */
+        @media (max-width: 480px) {
+            .hero-dark {
+                padding: 80px 0 30px;
+            }
+
+            .hero-dark h1 {
+                font-size: 1.35rem;
+            }
+
+            .hero-dark .hero-desc {
+                font-size: 0.82rem;
+            }
+
+            .ls,
+            .ls-alt {
+                padding: 48px 0;
+            }
+
+            .svc-card {
+                padding: 24px 18px 22px;
+            }
+
+            .svc-price {
+                font-size: 1.6rem;
+            }
+
+            .cta-final {
+                padding: 48px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" fill="url(#lg1)" /><text x="50" y="62" text-anchor="middle"
+                        font-family="Montserrat,sans-serif" font-weight="900" font-size="36" fill="white">UV</text>
+                    <defs>
+                        <linearGradient id="lg1" x1="0" y1="0" x2="100" y2="100">
+                            <stop offset="0%" stop-color="#cf004d" />
+                            <stop offset="100%" stop-color="#93003c" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-logo-text">BrandByUV</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="addons.html">Add-Ons</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html" class="active">Services</a><a
+            href="addons.html">Add-Ons</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ===== BANNER ===== -->
+    <section class="hero-dark">
+        <div class="container">
+            <p class="ey">Our Services</p>
+            <h1>Professional Branding Solutions<br>for <em>Modern Businesses</em></h1>
+            <p class="hero-desc">We combine strategy, creativity, and clarity to build brands that communicate
+                confidence and credibility.</p>
+        </div>
+    </section>
+
+    <!-- ===== PRICING CARDS ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Pricing</p>
+                <h2>Transparent Pricing. No Hidden Costs.</h2>
+                <p>Choose the plan that fits your stage.</p>
+            </div>
+            <div class="svc-grid">
+                <!-- ESSENTIAL -->
+                <div class="svc-card fade-in">
+                    <span class="svc-tag starter">Starter Package</span>
+                    <h3>Essential Logo Design</h3>
+                    <p class="svc-price">₹2,999</p>
+                    <p class="svc-desc">The perfect starting point for new startups and personal brands.</p>
+                    <ul class="svc-features">
+                        <li><span class="ck">✓</span> 3 Initial Logo Concepts</li>
+                        <li><span class="ck">✓</span> 2 Revision Rounds</li>
+                        <li><span class="ck">✓</span> Final Files: JPG, PNG, SVG</li>
+                        <li><span class="ck">✓</span> Basic Logo Usage Guide</li>
+                    </ul>
+                    <div class="svc-best"><strong>Best For:</strong> New startups & personal brands that need a
+                        professional logo.</div>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Get Started →</a>
+                </div>
+
+                <!-- COMPREHENSIVE (Featured) -->
+                <div class="svc-card featured fade-in delay-2">
+                    <span class="svc-tag popular">Most Popular</span>
+                    <h3>Comprehensive Brand Identity</h3>
+                    <p class="svc-price">₹6,999</p>
+                    <p class="svc-desc">Build consistency and look professional across every platform.</p>
+                    <ul class="svc-features">
+                        <li><span class="ck">✓</span> 3 Logo Concepts</li>
+                        <li><span class="ck">✓</span> 3 Revision Rounds</li>
+                        <li><span class="ck">✓</span> Color Palette System</li>
+                        <li><span class="ck">✓</span> Typography Selection</li>
+                        <li><span class="ck">✓</span> Basic Brand Guidelines</li>
+                        <li><span class="ck">✓</span> Final Files: JPG, PNG, SVG</li>
+                    </ul>
+                    <div class="svc-best"><strong>Best For:</strong> Businesses building brand consistency across all
+                        touchpoints.</div>
+                    <a href="contact.html" class="btn btn-primary btn-sm">Upgrade Your Brand →</a>
+                </div>
+
+                <!-- ULTIMATE -->
+                <div class="svc-card fade-in delay-3">
+                    <span class="svc-tag premium">Premium Package</span>
+                    <h3>Ultimate Branding Solution</h3>
+                    <p class="svc-price">₹14,999</p>
+                    <p class="svc-desc">The complete branding experience for market-ready brands.</p>
+                    <ul class="svc-features">
+                        <li><span class="ck">✓</span> 3 Premium Logo Concepts</li>
+                        <li><span class="ck">✓</span> Unlimited Refinements</li>
+                        <li><span class="ck">✓</span> Full Brand Identity Guide (PDF)</li>
+                        <li><span class="ck">✓</span> Logo Files: JPG, PNG, PDF, SVG</li>
+                        <li><span class="ck">✓</span> Color System & Typography</li>
+                        <li><span class="ck">✓</span> 3 Months Brand Support</li>
+                    </ul>
+                    <div class="svc-best"><strong>Best For:</strong> Market-ready brands aiming for strong positioning
+                        and long-term equity.</div>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Build My Brand →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPARISON TABLE ===== -->
+    <section class="ls-alt">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Compare Plans</p>
+                <h2>Choose Your Perfect Plan</h2>
+            </div>
+            <div class="compare-wrap">
+                <table class="compare-table fade-in">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Essential<br><span class="plan-price">₹2,999</span></th>
+                            <th class="popular-col">Comprehensive<br><span class="plan-price">₹6,999</span></th>
+                            <th>Ultimate<br><span class="plan-price">₹14,999</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logo Concepts</td>
+                            <td>3</td>
+                            <td class="popular-col">3</td>
+                            <td>3 Premium</td>
+                        </tr>
+                        <tr>
+                            <td>Revision Rounds</td>
+                            <td>2</td>
+                            <td class="popular-col">3</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Color Palette</td>
+                            <td class="check-no">—</td>
+                            <td class="popular-col check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Typography</td>
+                            <td class="check-no">—</td>
+                            <td class="popular-col check-yes">✓</td>
+                            <td class="check-yes">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Brand Guidelines</td>
+                            <td>Basic</td>
+                            <td class="popular-col">Basic</td>
+                            <td>Full PDF</td>
+                        </tr>
+                        <tr>
+                            <td>File Formats</td>
+                            <td>JPG, PNG, SVG</td>
+                            <td class="popular-col">JPG, PNG, SVG</td>
+                            <td>JPG, PNG, PDF, SVG</td>
+                        </tr>
+                        <tr>
+                            <td>Post-Delivery Support</td>
+                            <td class="check-no">—</td>
+                            <td class="popular-col check-no">—</td>
+                            <td class="check-yes" style="font-weight: 700;">3 Months</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="guarantee fade-in">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <span>100% Satisfaction Guarantee</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ADD-ONS CTA ===== -->
+    <section class="ls">
+        <div class="container">
+            <div class="ls-header">
+                <p class="ey">Enhance Your Brand</p>
+                <h2>Need More?</h2>
+            </div>
+            <div class="addons-cta">
+                <p class="desc fade-in">Check out our add-on packages to extend your brand even further — from business
+                    cards to full websites.</p>
+                <a href="addons.html" class="btn btn-primary fade-in">View Add-On Packages →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="fade-in">Ready to Get Started?</h2>
+            <p class="fade-in">Choose your package and let's build a brand that commands attention.</p>
+            <div class="cb fade-in">
+                <a href="contact.html" class="btn btn-primary">Start Your Project <span>→</span></a>
+                <a href="https://wa.me/919544464144" class="btn btn-outline-white" target="_blank">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHARED FOOTER & FAB -->
+    <div id="shared-footer"></div>
+    <div id="shared-fab"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>
