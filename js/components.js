@@ -15,17 +15,7 @@ function injectFooter() {
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
-                            <circle cx="50" cy="50" r="48" fill="url(#flg)" /><text x="50" y="62" text-anchor="middle"
-                                font-family="Montserrat,sans-serif" font-weight="900" font-size="36"
-                                fill="white">UV</text>
-                            <defs>
-                                <linearGradient id="flg" x1="0" y1="0" x2="100" y2="100">
-                                    <stop offset="0%" stop-color="#cf004d" />
-                                    <stop offset="100%" stop-color="#93003c" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                        <img src="images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" style="height:32px; width:auto;">
                         <span class="footer-logo-text">BrandByUV</span>
                     </div>
                     <p>Strategic branding for startups & growing businesses.</p>

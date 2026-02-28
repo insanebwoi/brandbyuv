@@ -15,11 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- Navbar Scroll ----
     const navbar = document.querySelector('.navbar');
+    const brandIcon = document.querySelector('.nav-brand-icon');
     const handleScroll = () => {
         if (window.scrollY > 60) {
             navbar.classList.add('scrolled');
+            if (brandIcon) brandIcon.src = 'images/iconlogo_dark.svg';
         } else {
             navbar.classList.remove('scrolled');
+            if (brandIcon) brandIcon.src = 'images/iconlogo_white.svg';
         }
     };
     window.addEventListener('scroll', handleScroll);
