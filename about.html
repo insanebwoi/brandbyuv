@@ -7,25 +7,29 @@
     <!-- PRIMARY SEO CONFIGURED -->
     <title>About BrandByUV — Our Story, Process & Vision</title>
     <meta name="title" content="About BrandByUV — Our Story, Process & Vision">
-    <meta name="description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta name="description"
+        content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
     <meta name="author" content="Ihsan MK — BrandByUV">
-    <meta name="keywords" content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
+    <meta name="keywords"
+        content="BrandByUV, Ihsan MK, Premium Branding Agency in India, Logo Design, Brand Strategy, UI/UX Design, Corporate Identity, Business Branding">
     <link rel="canonical" href="https://brandbyuv.com/about.html">
 
     <!-- OPEN GRAPH / FACEBOOK -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brandbyuv.com/about.html">
     <meta property="og:title" content="About BrandByUV — Our Story, Process & Vision">
-    <meta property="og:description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta property="og:description"
+        content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
     <meta property="og:image" content="https://brandbyuv.com/images/og-image.jpg">
 
     <!-- TWITTER / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://brandbyuv.com/about.html">
     <meta property="twitter:title" content="About BrandByUV — Our Story, Process & Vision">
-    <meta property="twitter:description" content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
+    <meta property="twitter:description"
+        content="Meet BrandByUV. Learn about our elite brand strategy process, our dedicated team led by Ihsan MK, and the values that drive our high-end design solutions.">
     <meta property="twitter:image" content="https://brandbyuv.com/images/og-image.jpg">
-            <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
     <style>
@@ -473,6 +477,80 @@
             display: contents;
         }
 
+        /* ---------- UV MODAL ---------- */
+        .uv-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 20px;
+        }
+
+        .uv-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .uv-modal-box {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            padding: 40px 48px;
+            transform: translateY(20px) scale(0.98);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .uv-modal-overlay.active .uv-modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .uv-modal-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .uv-modal-close:hover {
+            color: var(--accent);
+        }
+
+        .uv-modal-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-right: 30px;
+        }
+
+        .uv-modal-box p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
         /* ========== RESPONSIVE: TABLET (≤1024px) ========== */
         @media (max-width: 1024px) {
             .hero-dark {
@@ -709,6 +787,11 @@
                 gap: 6px;
                 text-align: center;
             }
+
+            .uv-modal-box {
+                padding: 32px 24px;
+            }
+
         }
 
         /* ========== RESPONSIVE: SMALL MOBILE (≤480px) ========== */
@@ -814,6 +897,23 @@
                 <p>From logo foundations to complete brand systems, we create identities that don't just look good —
                     <strong>they work.</strong>
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT IS UV ===== -->
+    <section class="ds fade-in">
+        <div class="container text-center">
+            <div class="ls-header">
+                <p class="ey" style="color: #ff4d8d;">The Story Behind</p>
+                <h2 style="color: #feecf3;">What does "UV" mean?</h2>
+            </div>
+            <div class="philo-card"
+                style="max-width: 600px; margin: 0 auto; padding: 40px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg);">
+                <p style="color: rgba(255, 223, 236, 0.88); font-size: 1.05rem; line-height: 1.8; margin-bottom: 28px;">
+                    People often ask what "UV" stands for. Is it Ultraviolet? Is it a complex marketing acronym? The
+                    truth is much more personal and deeply rooted in the foundation of this agency.</p>
+                <button class="btn btn-primary" onclick="openUvModal()">Read Detailed Story</button>
             </div>
         </div>
     </section>
@@ -1000,8 +1100,45 @@
     <!-- SHARED FAB (injected via JS) -->
     <div id="shared-fab"></div>
 
+    <!-- UV MODAL -->
+    <div class="uv-modal-overlay" id="uvModalOverlay" onclick="closeUvModal(event)">
+        <div class="uv-modal-box">
+            <button class="uv-modal-close" onclick="closeUvModal(event, true)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h3>The Story of "UV"</h3>
+            <p>When starting this agency, the goal was never to hide behind a generic corporate facade. BrandByUV is
+                deeply tied to the personal identity and artistic roots of its founder, Ihsan MK.</p>
+            <p>The letters <strong>UV</strong> come from the name "Uvais", an integral part of Ihsan's personal identity
+                and journey. By infusing this personal designation into the brand name, it stands as a daily reminder of
+                authenticity.</p>
+            <p>In strategic branding, the most powerful assets are a brand's authentic truths. "UV" stands for that
+                truth. It means every logo designed, every strategy outlined, and every business launched under this
+                agency is crafted with absolute personal dedication and integrity.</p>
+            <p style="font-style: italic; margin-top: 24px;">"We don't build generic businesses. We build personal
+                legacies. And it starts with our own name."</p>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
     <script src="js/components.js"></script>
+    <script>
+        function openUvModal() {
+            document.getElementById('uvModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeUvModal(e, forceClose) {
+            if (forceClose || e.target === document.getElementById('uvModalOverlay')) {
+                document.getElementById('uvModalOverlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
 </body>
 
 </html>
