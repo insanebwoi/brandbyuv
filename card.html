@@ -39,6 +39,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
+            height: 100dvh;
             background: #ffffff;
             /* Strict white screen as requested */
             display: flex;
@@ -660,21 +661,44 @@
             }
         });
 
-        // Mobile Gyroscope Tracking
-        if (window.DeviceOrientationEvent) {
-            window.addEventListener('deviceorientation', (e) => {
-                if (window.innerWidth <= 768 && e.gamma !== null && e.beta !== null) {
-                    // Gamma is left-to-right tilt in degrees, where right is positive
-                    // Beta is front-to-back tilt in degrees, where front is positive
+        // Mobile Gyroscope Tracking (iOS 13+ support)
+        let initializedGyro = false;
 
-                    // Clamp to max 25 degrees tilt
-                    let rawGamma = Math.max(-25, Math.min(25, e.gamma));
-                    let rawBeta = Math.max(-25, Math.min(25, e.beta - 40)); // offset beta so holding phone 40deg acts as 'center'
+        function handleOrientation(e) {
+            if (window.innerWidth <= 768 && e.gamma !== null && e.beta !== null) {
+                // Clamp to max 25 degrees tilt
+                let rawGamma = Math.max(-25, Math.min(25, e.gamma));
+                let rawBeta = Math.max(-25, Math.min(25, e.beta - 40));
 
-                    targetRotateY = rawGamma;
-                    targetRotateX = -rawBeta;
-                }
-            }, true);
+                targetRotateY = rawGamma;
+                targetRotateX = -rawBeta;
+            }
+        }
+
+        function requestGyroAccess() {
+            if (initializedGyro) return;
+            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(permissionState => {
+                        if (permissionState === 'granted') {
+                            window.addEventListener('deviceorientation', handleOrientation, true);
+                            initializedGyro = true;
+                        }
+                    })
+                    .catch(console.error);
+            } else if (window.DeviceOrientationEvent) {
+                window.addEventListener('deviceorientation', handleOrientation, true);
+                initializedGyro = true;
+            }
+        }
+
+        // Must attach to user interaction due to iOS requirements
+        document.body.addEventListener('click', requestGyroAccess, { once: true });
+        document.body.addEventListener('touchstart', requestGyroAccess, { once: true });
+
+        // Auto-initialize for Android and older browsers where permission isn't required
+        if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission !== 'function') {
+            requestGyroAccess();
         }
 
         // 4. VCARD GENERATION
