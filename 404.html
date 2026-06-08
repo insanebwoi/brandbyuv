@@ -13,49 +13,188 @@
     <script src="js/analytics.js" defer></script>
     <style>
         .hero-404 {
-            padding: 180px 0 100px;
+            padding: 140px 0 80px;
             text-align: center;
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
-            background: radial-gradient(ellipse at 50% 0%, rgba(147,0,60,0.18) 0%, transparent 55%), #0a0a0f;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147,0,60,0.2) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(207,0,77,0.06) 0%, transparent 40%),
+                        #0a0a0f;
         }
+
+        /* Animated floating shapes */
+        .hero-404::before,
+        .hero-404::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07;
+            animation: float404 8s ease-in-out infinite;
+        }
+        .hero-404::before {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent), transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+        .hero-404::after {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #ff4d8d, transparent 70%);
+            bottom: -80px;
+            left: -80px;
+            animation-delay: 4s;
+        }
+        @keyframes float404 {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
         .hero-404-inner {
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-        .hero-404 h1 {
+
+        /* Glitchy animated 404 number */
+        .error-code {
             font-family: var(--font-heading);
             font-weight: 900;
-            font-size: clamp(6rem, 15vw, 10rem);
-            color: #fff;
+            font-size: clamp(7rem, 18vw, 12rem);
             line-height: 1;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ff4d8d, #cf004d);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ff4d8d 0%, #cf004d 40%, #ff4d8d 100%);
+            background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            position: relative;
+            user-select: none;
         }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Decorative broken line */
+        .error-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #cf004d, #ff4d8d);
+            margin: 0 auto 28px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .error-divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer404 3s infinite;
+        }
+        @keyframes shimmer404 {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+
         .hero-404 h2 {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 3vw, 2rem);
             color: #fff;
             margin-bottom: 16px;
         }
-        .hero-404 p {
-            font-size: 1.1rem;
-            color: rgba(255,223,236,0.7);
-            margin-bottom: 36px;
-            line-height: 1.6;
+        .hero-404 p.desc {
+            font-size: 1.05rem;
+            color: rgba(255,223,236,0.65);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .hero-404 .cb {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        /* Quick links grid */
+        .quick-links-404 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .quick-links-404 a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            color: rgba(255,223,236,0.8);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        .quick-links-404 a:hover {
+            background: rgba(207,0,77,0.1);
+            border-color: rgba(207,0,77,0.25);
+            color: #ff4d8d;
+            transform: translateY(-3px);
+        }
+        .quick-links-404 a svg {
+            width: 24px;
+            height: 24px;
+            stroke: #ff4d8d;
+            fill: none;
+            stroke-width: 1.8;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .quick-links-404 a:hover svg {
+            opacity: 1;
+        }
+
+        .ql-label {
+            display: block;
+            text-align: center;
+            color: rgba(255,223,236,0.4);
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .quick-links-404 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-404 {
+                padding: 120px 0 60px;
+            }
         }
     </style>
 </head>
@@ -81,12 +220,29 @@
     <section class="hero-404">
         <div class="container">
             <div class="hero-404-inner">
-                <h1>404</h1>
-                <h2>Oops! Page Not Found</h2>
-                <p>The page you're looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                <div class="error-code">404</div>
+                <div class="error-divider"></div>
+                <h2>This Page Doesn't Exist</h2>
+                <p class="desc">The page you're looking for may have been moved, renamed, or is no longer available. Let's get you back on track.</p>
                 <div class="cb">
-                    <a href="index.html" class="btn btn-primary btn-lg">Back to Homepage</a>
-                    <a href="services.html" class="btn btn-outline-white btn-lg">View Services</a>
+                    <a href="index.html" class="btn btn-primary btn-lg">← Back to Homepage</a>
+                    <a href="https://wa.me/919544464144?text=Hi!%20I%20landed%20on%20a%20broken%20page%20on%20your%20website." target="_blank" rel="noopener noreferrer" class="btn btn-outline-white btn-lg">Report This Issue</a>
+                </div>
+
+                <p class="ql-label">Or explore</p>
+                <div class="quick-links-404">
+                    <a href="services.html">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Services
+                    </a>
+                    <a href="portfolio.html">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        Portfolio
+                    </a>
+                    <a href="contact.html">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact
+                    </a>
                 </div>
             </div>
         </div>

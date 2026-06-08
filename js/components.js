@@ -5,47 +5,69 @@
    Include this file on every page.
    ============================================ */
 
+/* Detect the path prefix needed for sub-directory pages */
+function getPathPrefix() {
+    var depth = 0;
+    var path = window.location.pathname;
+    // Count how many subdirectory levels we're in
+    var segments = path.replace(/^\//, '').replace(/\/$/, '').split('/');
+    // segments like ['locations','kozhikode.html'] means depth = 1
+    // segments like ['index.html'] means depth = 0
+    if (segments.length > 1) {
+        depth = segments.length - 1;
+    }
+    var prefix = '';
+    for (var i = 0; i < depth; i++) {
+        prefix += '../';
+    }
+    return prefix;
+}
+
 function injectBreadcrumbs() {
     // Don't show on homepage or card page
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
-    const normalizedPath = path.replace(/\.html$/, '');
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+    var normalizedPath = path.replace(/\.html$/, '');
     if (normalizedPath === '/' || normalizedPath === '/index' || normalizedPath === '/card') return;
 
-    const breadcrumbData = {
-        '/about': [{ name: 'Home', url: 'index.html' }, { name: 'About' }],
-        '/services': [{ name: 'Home', url: 'index.html' }, { name: 'Services' }],
-        '/addons': [{ name: 'Home', url: 'index.html' }, { name: 'Services', url: 'services.html' }, { name: 'Add-Ons' }],
-        '/portfolio': [{ name: 'Home', url: 'index.html' }, { name: 'Portfolio' }],
-        '/contact': [{ name: 'Home', url: 'index.html' }, { name: 'Contact' }],
-        '/partner': [{ name: 'Home', url: 'index.html' }, { name: 'Partner Program' }]
+    var prefix = getPathPrefix();
+
+    var breadcrumbData = {
+        '/about': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'About' }],
+        '/services': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'Services' }],
+        '/addons': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'Services', url: prefix + 'services.html' }, { name: 'Add-Ons' }],
+        '/portfolio': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'Portfolio' }],
+        '/contact': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'Contact' }],
+        '/partner': [{ name: 'Home', url: prefix + 'index.html' }, { name: 'Partner Program' }]
     };
 
-    const crumbs = breadcrumbData[normalizedPath];
+    var crumbs = breadcrumbData[normalizedPath];
     if (!crumbs) return;
 
-    const items = crumbs.map(function (c, i) {
-        const isLast = i === crumbs.length - 1;
+    var items = crumbs.map(function (c, i) {
+        var isLast = i === crumbs.length - 1;
         if (isLast) {
             return '<li><span>' + c.name + '</span></li>';
         }
         return '<li><a href="' + c.url + '">' + c.name + '</a><span class="buv-breadcrumb-sep">›</span></li>';
     }).join('');
 
-    const nav = document.createElement('nav');
+    var nav = document.createElement('nav');
     nav.className = 'buv-breadcrumb';
     nav.setAttribute('aria-label', 'Breadcrumb');
     nav.innerHTML = '<div class="container"><ol class="buv-breadcrumb-list">' + items + '</ol></div>';
 
     // Insert after hero section (first section or .hero-dark)
-    const hero = document.querySelector('.hero-dark, .hero, section:first-of-type');
+    var hero = document.querySelector('.hero-dark, .hero, section:first-of-type');
     if (hero && hero.nextSibling) {
         hero.parentNode.insertBefore(nav, hero.nextSibling);
     }
 }
 
 function injectFooter() {
-    const footerPlaceholder = document.getElementById('shared-footer');
+    var footerPlaceholder = document.getElementById('shared-footer');
     if (!footerPlaceholder) return;
+
+    var p = getPathPrefix();
 
     footerPlaceholder.outerHTML = `
     <!-- FOOTER -->
@@ -54,7 +76,7 @@ function injectFooter() {
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" style="height:32px; width:auto;" loading="lazy">
+                        <img src="${p}images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" style="height:32px; width:auto;" loading="lazy">
                         <span class="footer-logo-text">BrandByUV</span>
                     </div>
                     <p>Strategic branding for startups &amp; growing businesses across India.</p>
@@ -82,19 +104,19 @@ function injectFooter() {
                 </div>
                 <div class="footer-links-row">
                     <div class="footer-col">
-                        <h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a
-                            href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a
-                            href="contact.html">Contact</a><a href="partner.html">Partner Program</a>
+                        <h4>Quick Links</h4><a href="${p}index.html">Home</a><a href="${p}about.html">About Us</a><a
+                            href="${p}services.html">Services</a><a href="${p}portfolio.html">Portfolio</a><a
+                            href="${p}contact.html">Contact</a><a href="${p}partner.html">Partner Program</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Services</h4><a href="services/logo-design.html">Logo Design</a><a
-                            href="services/brand-identity.html">Brand Identity</a><a href="services/startup-branding.html">Startup Branding</a><a
-                            href="services/packaging-design.html">Packaging Design</a><a href="services/website-design.html">Website Design</a><a href="addons.html">Add-On Packages</a>
+                        <h4>Services</h4><a href="${p}services/logo-design.html">Logo Design</a><a
+                            href="${p}services/brand-identity.html">Brand Identity</a><a href="${p}services/startup-branding.html">Startup Branding</a><a
+                            href="${p}services/packaging-design.html">Packaging Design</a><a href="${p}services/website-design.html">Website Design</a><a href="${p}addons.html">Add-On Packages</a>
                     </div>
                     <div class="footer-col">
-                        <h4>We Serve</h4><a href="locations/kerala.html">Kerala</a><a
-                            href="locations/kochi.html">Kochi</a><a href="locations/bangalore.html">Bangalore</a><a
-                            href="locations/mumbai.html">Mumbai</a><a href="locations/india.html">All India</a>
+                        <h4>We Serve</h4><a href="${p}locations/kerala.html">Kerala</a><a
+                            href="${p}locations/kochi.html">Kochi</a><a href="${p}locations/bangalore.html">Bangalore</a><a
+                            href="${p}locations/mumbai.html">Mumbai</a><a href="${p}locations/india.html">All India</a>
                     </div>
                 </div>
                 <div class="footer-col footer-touch">
@@ -124,7 +146,7 @@ function injectFooter() {
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 BrandByUV. All Rights Reserved.</p>
-                <p class="crafted">Crafted by <a href="index.html">BrandByUV</a></p>
+                <p class="crafted">Crafted by <a href="${p}index.html">BrandByUV</a></p>
             </div>
         </div>
     </footer>
@@ -132,8 +154,13 @@ function injectFooter() {
 }
 
 function injectFab() {
-    const fabPlaceholder = document.getElementById('shared-fab');
+    var fabPlaceholder = document.getElementById('shared-fab');
     if (!fabPlaceholder) return;
+
+    // Don't inject FAB on the homepage
+    var path = window.location.pathname.replace(/\/$/, '') || '/';
+    var normalizedPath = path.replace(/\.html$/, '');
+    if (normalizedPath === '/' || normalizedPath === '/index') return;
 
     fabPlaceholder.outerHTML = `
     <div class="fab-morph" id="fabMorph" title="Chat on WhatsApp" role="button" aria-label="Chat with us on WhatsApp">
