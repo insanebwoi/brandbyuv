@@ -1,0 +1,13 @@
+# BrandByUV — robots.txt
+# https://brandbyuv.mopgen.in
+
+User-agent: *
+Allow: /
+
+# Block utility files and directories
+Disallow: /velorah-hero/
+Disallow: /replace_logo_bu.py
+Disallow: /.git/
+
+# XML Sitemap
+Sitemap: https://brandbyuv.mopgen.in/sitemap.xml

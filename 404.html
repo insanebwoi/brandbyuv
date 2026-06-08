@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | BrandByUV</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/iconlogo_white.svg">
+    <script src="js/analytics.js" defer></script>
+    <style>
+        .hero-404 {
+            padding: 180px 0 100px;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 0%, rgba(147,0,60,0.18) 0%, transparent 55%), #0a0a0f;
+        }
+        .hero-404-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-404 h1 {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: clamp(6rem, 15vw, 10rem);
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ff4d8d, #cf004d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-404 h2 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .hero-404 p {
+            font-size: 1.1rem;
+            color: rgba(255,223,236,0.7);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        .hero-404 .cb {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" loading="lazy" decoding="async">
+                <span class="nav-logo-text">BrandByUV</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="addons.html">Add-Ons</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="addons.html">Add-Ons</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+    </div>
+
+    <section class="hero-404">
+        <div class="container">
+            <div class="hero-404-inner">
+                <h1>404</h1>
+                <h2>Oops! Page Not Found</h2>
+                <p>The page you're looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                <div class="cb">
+                    <a href="index.html" class="btn btn-primary btn-lg">Back to Homepage</a>
+                    <a href="services.html" class="btn btn-outline-white btn-lg">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="shared-footer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>

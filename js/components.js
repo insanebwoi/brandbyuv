@@ -1,8 +1,47 @@
 /* ============================================
    BRANDBYUV — Shared Components
    Footer + Morphing FAB (WhatsApp / Back to Top)
+   + Breadcrumb Navigation
    Include this file on every page.
    ============================================ */
+
+function injectBreadcrumbs() {
+    // Don't show on homepage or card page
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const normalizedPath = path.replace(/\.html$/, '');
+    if (normalizedPath === '/' || normalizedPath === '/index' || normalizedPath === '/card') return;
+
+    const breadcrumbData = {
+        '/about': [{ name: 'Home', url: 'index.html' }, { name: 'About' }],
+        '/services': [{ name: 'Home', url: 'index.html' }, { name: 'Services' }],
+        '/addons': [{ name: 'Home', url: 'index.html' }, { name: 'Services', url: 'services.html' }, { name: 'Add-Ons' }],
+        '/portfolio': [{ name: 'Home', url: 'index.html' }, { name: 'Portfolio' }],
+        '/contact': [{ name: 'Home', url: 'index.html' }, { name: 'Contact' }],
+        '/partner': [{ name: 'Home', url: 'index.html' }, { name: 'Partner Program' }]
+    };
+
+    const crumbs = breadcrumbData[normalizedPath];
+    if (!crumbs) return;
+
+    const items = crumbs.map(function (c, i) {
+        const isLast = i === crumbs.length - 1;
+        if (isLast) {
+            return '<li><span>' + c.name + '</span></li>';
+        }
+        return '<li><a href="' + c.url + '">' + c.name + '</a><span class="buv-breadcrumb-sep">›</span></li>';
+    }).join('');
+
+    const nav = document.createElement('nav');
+    nav.className = 'buv-breadcrumb';
+    nav.setAttribute('aria-label', 'Breadcrumb');
+    nav.innerHTML = '<div class="container"><ol class="buv-breadcrumb-list">' + items + '</ol></div>';
+
+    // Insert after hero section (first section or .hero-dark)
+    const hero = document.querySelector('.hero-dark, .hero, section:first-of-type');
+    if (hero && hero.nextSibling) {
+        hero.parentNode.insertBefore(nav, hero.nextSibling);
+    }
+}
 
 function injectFooter() {
     const footerPlaceholder = document.getElementById('shared-footer');
@@ -15,25 +54,25 @@ function injectFooter() {
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" style="height:32px; width:auto;">
+                        <img src="images/iconlogo_white.svg" alt="BrandByUV Logo" class="nav-brand-icon" style="height:32px; width:auto;" loading="lazy">
                         <span class="footer-logo-text">BrandByUV</span>
                     </div>
-                    <p>Strategic branding for startups & growing businesses.</p>
+                    <p>Strategic branding for startups &amp; growing businesses across India.</p>
                     <div class="footer-social">
-                        <a href="https://instagram.com/brandbyuv.in" target="_blank" title="Instagram"><svg width="16"
+                        <a href="https://instagram.com/brandbyuv.in" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Follow BrandByUV on Instagram"><svg width="16"
                                 height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                             </svg></a>
-                        <a href="https://wa.me/919544464144" target="_blank" title="WhatsApp"><svg width="16"
+                        <a href="https://wa.me/919544464144" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Chat with BrandByUV on WhatsApp"><svg width="16"
                                 height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                             </svg></a>
-                        <a href="mailto:hello@brandbyuv.com" title="Email"><svg width="16" height="16"
+                        <a href="mailto:hello@brandbyuv.com" title="Email" aria-label="Email BrandByUV"><svg width="16" height="16"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -48,9 +87,14 @@ function injectFooter() {
                             href="contact.html">Contact</a><a href="partner.html">Partner Program</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Services</h4><a href="services.html#essential">Essential Logo</a><a
-                            href="services.html#comprehensive">Brand Identity</a><a href="services.html#ultimate">Ultimate
-                            Branding</a><a href="addons.html">Add-On Packages</a>
+                        <h4>Services</h4><a href="services/logo-design.html">Logo Design</a><a
+                            href="services/brand-identity.html">Brand Identity</a><a href="services/startup-branding.html">Startup Branding</a><a
+                            href="services/packaging-design.html">Packaging Design</a><a href="services/website-design.html">Website Design</a><a href="addons.html">Add-On Packages</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>We Serve</h4><a href="locations/kerala.html">Kerala</a><a
+                            href="locations/kochi.html">Kochi</a><a href="locations/bangalore.html">Bangalore</a><a
+                            href="locations/mumbai.html">Mumbai</a><a href="locations/india.html">All India</a>
                     </div>
                 </div>
                 <div class="footer-col footer-touch">
@@ -68,7 +112,7 @@ function injectFooter() {
                             stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                             <polyline points="22,6 12,13 2,6" />
-                        </svg>hello@brandbyuv.com</a><a href="https://instagram.com/brandbyuv.in" target="_blank"><svg
+                        </svg>hello@brandbyuv.com</a><a href="https://instagram.com/brandbyuv.in" target="_blank" rel="noopener noreferrer"><svg
                             width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             style="vertical-align:-2px;margin-right:4px">
@@ -92,7 +136,7 @@ function injectFab() {
     if (!fabPlaceholder) return;
 
     fabPlaceholder.outerHTML = `
-    <div class="fab-morph" id="fabMorph" title="Chat on WhatsApp">
+    <div class="fab-morph" id="fabMorph" title="Chat on WhatsApp" role="button" aria-label="Chat with us on WhatsApp">
         <span class="fab-icon fab-wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -110,4 +154,5 @@ function injectFab() {
 document.addEventListener('DOMContentLoaded', () => {
     injectFooter();
     injectFab();
+    injectBreadcrumbs();
 });
